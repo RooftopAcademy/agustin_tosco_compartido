@@ -27,14 +27,6 @@ body {
     height: 50px;
 }
 
-.header {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: space-around;
-    background-color: rgba(242,130,15,1);
-}
-
 #header-img {
     width: 50px;
     height: 50px;
@@ -216,9 +208,19 @@ body {
         margin-top: auto;
     }
 
+    .hamburguer-menu {
+        padding: 5px;
+        margin-top: 10px;
+      }
+    
+      #hamburguer-icon {
+        height: 30px;
+        width: 30px;
+      }
+
     .content {
         visibility: hidden;
-        margin-top: 45px;
+        margin-top: 7px;
         margin-right: 20px;
         background-color: #c7c7c7;
     }
