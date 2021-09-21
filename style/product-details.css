@@ -36,6 +36,52 @@ body {
   display: none;
 }
 
+.dropdown-menu {
+  margin-left: auto;
+  margin-top: auto;
+  z-index: 1;
+}
+
+.hamburguer-menu {
+  padding: 5px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+#hamburguer-icon {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: left;
+  margin-right: 10px;
+}
+
+.content {
+  visibility: hidden;
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: #c7c7c7;
+}
+
+.dropdown-menu .content .option {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0px;
+}
+
+.visible {
+  visibility: visible;
+} 
+
 .logo h1 {
   display: none;
 }
@@ -141,7 +187,7 @@ body {
 
   .content {
       visibility: hidden;
-      margin-top: 7px;
+      margin-top: 10px;
       margin-right: 20px;
       background-color: #c7c7c7;
   }
@@ -161,8 +207,11 @@ body {
   .visible {
       visibility: visible;
   }
+  
+  .features {
+    margin-left: 0px;
+  }
 }
-
 
 .contact-us {
     display: flex;
@@ -223,12 +272,6 @@ body {
     background-color: rgba(242,130,15,1);
     transition: background-color 1s;
   }
-  
-@media (max-width: 650px) {
-    .contact-us {
-      margin-top: 150px;
-    }
-  }
 
 .submit-button {
     padding: 0 20px;
@@ -268,35 +311,7 @@ body {
     color: orange;
 }
   
-@media (max-width: 550px) {
-    .features .icon {
-      display: none;
-    }
-}
-  
-.description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 125px;
-    width: 80vw;
-    padding: 5px;
-}
-  
-@media (max-width: 550px) {
-    .description {
-      width: 100%;
-      text-align: center;
-      padding: 0;
-      height: 150px;
-    }
-}
-  
-@media (max-width: 650px) {
-    .features {
-      margin-top: 0;
-    } 
-}
+
 
 footer {
     position: fixed;
@@ -328,4 +343,31 @@ footer > span {
     justify-content: flex-end;
     font-size: 0.9em;
     color: #fff;
+  }
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 125px;
+    width: 80vw;
+    padding: 5px;
+}
+
+@media (max-width: 900px) {
+  .description {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 150px;
+    margin-top: 0px;
+  }
+  
+  .features {
+    margin-left: 0px;
+  }
+
+  .features .icon {
+    display: none;
+  }
 }
