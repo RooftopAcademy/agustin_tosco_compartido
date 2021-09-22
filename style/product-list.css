@@ -150,7 +150,7 @@ body {
     transition: background-color 1s;
 }
   
-@media (min-width: 900px) {
+@media (min-width: 700px) {
     .header {
         position: fixed;
         top: 0;
