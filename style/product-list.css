@@ -132,8 +132,14 @@ body {
     padding: 5px 0;
 }
 
-.product > .btn {
-    margin: 15px 0;
+.buy-details-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.product .btn {
+    margin: 10px;
     background-color: #f1c40f;
     padding: 0 20px;
     height: 40px;
@@ -145,7 +151,7 @@ body {
     cursor: pointer;
 }
   
-.product > .btn:hover {
+.product .btn:hover {
     background-color: orange;
     transition: background-color 1s;
 }

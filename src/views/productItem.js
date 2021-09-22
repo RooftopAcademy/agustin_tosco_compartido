@@ -9,9 +9,15 @@ function productItem (product) {
                 <li>Lorem ipsum.</li>
                 <li>Lorem ipsum.</li>
             </ul>
-            <button class="btn js-add-to-cart" data-product-id="${product.id}">
-                Comprar
-            </button>
+            <div class="buy-details-buttons">
+                <button class="btn js-details" data-product-id="${product.id}">
+                    Detalles
+                </button>
+                <button class="btn js-add-to-cart" data-product-id="${product.id}">
+                    Comprar
+                </button>
+            </div>
+
         </div>
     `
 }
