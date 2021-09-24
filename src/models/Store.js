@@ -57,13 +57,6 @@ function renderProductsList() {
     })
 }
 
-// function renderProductsDetails(product) {
-//     Array.from(document.getElementsByClassName('js-product-details'))
-//     .forEach((list) => {
-//         list.innerHTML = "product";
-//     })
-// }
-
 function addListener() {
     document.querySelectorAll(".js-add-to-cart")
     .forEach(btn => {
@@ -86,4 +79,5 @@ if(window.location.pathname == '/html/product-details.html') {
     let url = new URL(window.location.href);
     let productId = url.searchParams.get("id");
     fetchProductData(productId);
+    fetchProductComments(productId);
   }
