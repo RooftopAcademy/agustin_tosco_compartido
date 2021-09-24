@@ -17,7 +17,6 @@ function productItem (product) {
                     Comprar
                 </button>
             </div>
-
         </div>
     `
 }

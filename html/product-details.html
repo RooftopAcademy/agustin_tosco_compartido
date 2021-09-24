@@ -47,31 +47,34 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
       <div class="nav">
         <ul>
           <ul><a href="/html/index.html" class="nav-link">Home</ul></a>
           <ul><a href="/html/product-list.html" class="nav-link">Product List</ul></a>
         </ul>
       </div>
+      <div id="js-details" class="product-details-container js-product-details">
+        <div id="js-comment-section" class="comments-section">
+        </div>
       </div>
-      <div class="features">
-          
-      </div>
-        <footer class="footer">
-            <ul>
-              <ul><a id="st-footer" href="#">Privacy</a></ul>
-              <ul><a id="st-footer" href="#">Terms</a></ul>
-              <ul><a id="st-footer" href="#">Contact</a></ul>
-              </ul>
-              <span>Copyright 2021, WFT</span>
-          </footer>
-          <script defer src="../js/toggleMenu.js"></script>
-          <script defer src="../js/validateForm.js"></script>
-          <script defer src="../src/User.js"></script>
-          <script defer src="../src/Catalog.js"></script>
-          <script defer src="../src/Cart.js"></script>
-          <script defer src="../src/Product.js"></script>
-          <script defer src="../src/Store.js"></script>
+      <footer class="footer">
+        <ul>
+          <ul><a id="st-footer" href="#">Privacy</a></ul>
+          <ul><a id="st-footer" href="#">Terms</a></ul>
+          <ul><a id="st-footer" href="#">Contact</a></ul>
+        </ul>
+        <span>Copyright 2021, WFT</span>
+      </footer>
+      <script defer src="../src/models/User.js"></script>
+      <script defer src="../src/models/Catalog.js"></script>
+      <script defer src="../src/models/Cart.js"></script>
+      <script defer src="../src/models/Product.js"></script>
+      <script defer src="../src/fetchProductData.js"></script>
+      <script defer src="../src/views/productItem.js"></script>
+      <script defer src="../src/views/productsList.js"></script>
+      <script defer src="../src/views/productDetails.js"></script>
+      <script defer src="../js/toggleMenu.js"></script>
+      <script defer src="../src/models/Store.js"></script>
     </body>
 </html>

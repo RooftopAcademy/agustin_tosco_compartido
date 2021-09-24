@@ -1,4 +1,4 @@
-let button = document.getElementById("submit");
+let form = document.getElementById("form");
 
 function ValidateForm(e) {
 
@@ -13,7 +13,7 @@ function ValidateForm(e) {
     }
 
     if(email.value == '' || email == null) {
-        return alert("Ingrese un nombre");
+        return alert("Ingrese un email");
     }
 
     if(age.value == '' || age == null) {
