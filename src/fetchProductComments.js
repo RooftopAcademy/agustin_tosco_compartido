@@ -9,10 +9,10 @@ function fetchProductComments (productId) {
                 comment = el;
                 let nombre = comment.email.slice(0, comment.email.indexOf("@"));
                 commentsSection.innerHTML = `
-                    <h1>${nombre}</h1>
+                    <h1>Comments</h1>
+                    <h2>${nombre}</h2>
                     <ul>
                         <li>${comment.body}</li>
-                        <li>Description here and here Description here</li>
                     </ul>
                     `
            }
