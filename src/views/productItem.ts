@@ -1,4 +1,6 @@
-function productItem (product) {
+import Product from "../models/Product";
+
+export default function productItem (product: Product) : string {
     return `
         <div class="product">
             <div class="level">${product.name}</div>

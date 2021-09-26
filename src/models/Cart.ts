@@ -1,10 +1,14 @@
-class Cart {
-    // agregar, eliminar, actualizar
+import Product from "./Product"
+
+export default class Cart {
+
+    products: Product[];
+
     constructor() {
         this.products = [];
     }
 
-    add(p) {
+    add(p: Product) : void | Error {
         if (p instanceof Product) {
             this.products.push(p);
         } else {

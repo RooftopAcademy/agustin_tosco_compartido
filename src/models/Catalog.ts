@@ -1,4 +1,8 @@
-class Catalog {
+import Product from "./Product";
+
+export default class Catalog {
+
+    products: Product[];
 
     constructor() {
         this.products = [];
@@ -8,13 +12,13 @@ class Catalog {
         return this.products;
     }
 
-    findById(id) {
+    findById(id: string | number) {
         return this.products.find(p => {
             return p.id == id;
-        })
+        })!
     }
 
-    add(p) {
+    add(p: Product) : void  {
         this.products.push(p);
     }
 }

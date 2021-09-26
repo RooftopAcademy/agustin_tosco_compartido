@@ -1,4 +1,6 @@
-function productDetails(product) {
+import Product from "../models/Product";
+
+export default function productDetails(product: Product): string {
     return `
         <div class="details">
             <h1>Clase 1</h1>
