@@ -5,6 +5,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../style\product-list.css">
+        <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1123713137180590081/YuTnZLof_400x400.png"/>
         <title>Product List</title>
     </head>
     <body>
@@ -14,7 +15,6 @@
             id="header-img"
             src="https://pbs.twimg.com/profile_images/1123713137180590081/YuTnZLof_400x400.png"
           >
-          <h1>WFT + some text</h1>
         </div>
         <div class="search-bar">
           <div class="search-input">
@@ -51,6 +51,8 @@
         <ul>
           <ul><a href="/html/index.html" class="nav-link">Home</ul></a>
           <ul><a href="/html/product-list.html" class="nav-link">Product List</ul></a>
+          <div id="js-cart">
+          </div>
         </ul>
       </div>
       <div class="product-container js-product-list">
@@ -65,6 +67,7 @@
           <span>Copyright 2021, WFT</span>
       </footer>
       <script>var exports = {};</script>
+      <!-- <script defer src="../dist/src/app.js" type="module"></script> -->
       <script defer src="../dist\src\models\User.js" type="module"></script>
       <script defer src="../dist\src\models\Catalog.js" type="module"></script>
       <script defer src="../dist\src\models\Cart.js" type="module"></script>

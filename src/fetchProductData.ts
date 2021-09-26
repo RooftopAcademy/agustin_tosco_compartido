@@ -12,11 +12,11 @@ export default function fetchProductData (productId: string) {
                     <h1>${product.title.slice(0,10)}</h1>
                     <img class="product-detail-img" src="https://c8.alamy.com/compes/2d8kced/analisis-fundamental-analisis-de-la-inversion-en-acciones-mediante-la-busqueda-de-datos-de-la-empresa-2d8kced.jpg">
                     <ul>
-                        <li>${product.body.slice(0,15)}</li>
-                        <li>${product.body.slice(15,20)}</li>
-                        <li>${product.body.slice(20,32)}</li>
-                        <li>${product.body.slice(0,15)}</li>
-                        <li>${product.body.slice(15,20)}</li>
+                        <li>${product.body.slice(0,40)}</li>
+                        <li>${product.body.slice(15,50)}</li>
+                        <li>${product.body.slice(50)}</li>
+                        <li>${product.body.slice(0,30)}</li>
+                        <li>${product.body.slice(15,45)}</li>
                     </ul>
                 </div>
             `;

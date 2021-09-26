@@ -1,6 +1,7 @@
 import Product from "./Product.js"
+import { CartInterface } from "../interfaces.js";
 
-export default class Cart {
+export default class Cart implements CartInterface {
 
     products: Product[];
 

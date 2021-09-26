@@ -1,3 +1,5 @@
+import User from "../src/models/User.js";
+
 let form: HTMLElement = document.getElementById("form")!;
 
 function ValidateForm(e: Event) : void {
@@ -19,6 +21,15 @@ function ValidateForm(e: Event) : void {
     if(age.value == '' || age == null) {
         return alert("Ingrese una edad");
     }
+
+    let user: User = new User()
+    user.setName(name.value);
+    user.setEmail(email.value);
+    user.setAge(parseInt(age.value));
+
+    alert(`Bienvenido, ${name.value}`);
+
+    window.location.href = `/html/product-list.html`;
 }
 
 form.addEventListener('submit', ValidateForm);

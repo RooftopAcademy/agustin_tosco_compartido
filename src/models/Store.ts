@@ -5,15 +5,17 @@ import Product from "./Product.js";
 import productsList from "../views/productsList.js";
 import fetchProductData from "../fetchProductData.js";
 import fetchProductComments from "../fetchProductComments.js";
+import User from "./User.js";
+import { StoreInterface } from "../interfaces.js";
 
-class Store {
+class Store implements StoreInterface {
     
-    user: UserComment;
+    user: User;
     catalog: Catalog;
     cart: Cart;
 
     constructor() {
-        this.user = new UserComment;
+        this.user = new User;
         this.catalog = new Catalog;
         this.cart = new Cart; 
     }
@@ -33,9 +35,8 @@ class Store {
         ]
 
         // debo definir una interface para el data
-        data.forEach((item: { name: string; price: string; id: number; }) => {
-            let product = new Product;
-
+        data.forEach((item: {name: string, price: string, id: number}) => {
+            let product: Product = new Product;
             product.name = item.name;
             product.price = item.price;
             product.id = item.id;
