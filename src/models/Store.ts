@@ -6,8 +6,6 @@ import productsList from "../views/productsList.js";
 import fetchProductData from "../fetchProductData.js";
 import fetchProductComments from "../fetchProductComments.js";
 
-
-
 class Store {
     
     user: UserComment;
@@ -78,6 +76,8 @@ function addListener() : void {
         btn.addEventListener('click', function (this: HTMLInputElement) : void {
             let product: Product = store.getCatalog().findById(this.dataset.productId!);
             store.getCart().add(product);
+            let cartCounter: HTMLElement = document.getElementById("js-cart")!;
+            cartCounter.innerHTML = String(store.getCart().products.length);
         })
     })
     

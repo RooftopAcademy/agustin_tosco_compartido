@@ -7,18 +7,16 @@ export default function fetchProductData (productId: string) {
             if(el.id == productId) {
                 let product = el;
                 let details = document.getElementById("js-details")!;
-                let description = product.body.slice(0,25);
-                console.log(product.body);
                 details.innerHTML = `
                 <div class="details">
-                    <h1>${product.title}</h1>
+                    <h1>${product.title.slice(0,10)}</h1>
                     <img class="product-detail-img" src="https://c8.alamy.com/compes/2d8kced/analisis-fundamental-analisis-de-la-inversion-en-acciones-mediante-la-busqueda-de-datos-de-la-empresa-2d8kced.jpg">
                     <ul>
-                        <li>${description}</li>
-                        <li>${product.body}</li>
-                        <li>${description}</li>
-                        <li>${product.body}</li>
-                        <li>${description}</li>
+                        <li>${product.body.slice(0,15)}</li>
+                        <li>${product.body.slice(15,20)}</li>
+                        <li>${product.body.slice(20,32)}</li>
+                        <li>${product.body.slice(0,15)}</li>
+                        <li>${product.body.slice(15,20)}</li>
                     </ul>
                 </div>
             `;
