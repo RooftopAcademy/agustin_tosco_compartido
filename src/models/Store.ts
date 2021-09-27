@@ -23,15 +23,15 @@ class Store implements StoreInterface {
     fetchProducts() : void {
 
         let data: any[any] = [
-            {id:1, name: "Libro 1", price: "$123"},
-            {id:2, name: "Curso 1", price: "$223"},
-            {id:3, name: "Clase 1", price: "$1323"},
-            {id:1, name: "Libro 1", price: "$123"},
-            {id:2, name: "Curso 1", price: "$223"},
-            {id:3, name: "Clase 1", price: "$1323"},
-            {id:1, name: "Libro 1", price: "$123"},
-            {id:2, name: "Curso 1", price: "$223"},
-            {id:3, name: "Clase 1", price: "$1323"}
+            {id:1, name: "Libro 1", price: "$123", category: Category.Book},
+            {id:2, name: "Curso 1", price: "$223", category: Category.Course},
+            {id:3, name: "Clase 1", price: "$1323", category: Category.Software},
+            {id:1, name: "Libro 1", price: "$123", category: Category.Book},
+            {id:2, name: "Curso 1", price: "$223", category: Category.Course},
+            {id:3, name: "Clase 1", price: "$1323", category: Category.Course},
+            {id:1, name: "Libro 1", price: "$123", category: Category.Book},
+            {id:2, name: "Curso 1", price: "$223", category: Category.Course},
+            {id:3, name: "Clase 1", price: "$1323", category: Category.Course}
         ]
 
         // debo definir una interface para el data
