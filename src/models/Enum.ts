@@ -1,5 +1,11 @@
-enum Category {
+export enum CategoryEnum {
     Course,
     Book,
-    Software,
+    Software
+  }
+
+  export enum PrivilegesEnum {
+    Admin,
+    User,
+    Invited
   }

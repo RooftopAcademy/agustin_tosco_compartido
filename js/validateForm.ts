@@ -1,4 +1,5 @@
 import User from "../src/models/User.js";
+import generateError from "../js/generateError.js"
 
 let form: HTMLElement = document.getElementById("form")!;
 
@@ -10,16 +11,19 @@ function ValidateForm(e: Event) : void {
     let email = document.getElementById("email")! as HTMLInputElement;
     let age = document.getElementById("age")! as HTMLInputElement;
 
+    console.log(name.value);
+    
+
     if(name.value == '' || name == null) {
-        return alert("Ingrese un nombre");
+        return generateError("name");
     }
 
     if(email.value == '' || email == null) {
-        return alert("Ingrese un email");
+        return generateError("email");
     }
 
     if(age.value == '' || age == null) {
-        return alert("Ingrese una edad");
+        return generateError("age");
     }
 
     let user: User = new User()
