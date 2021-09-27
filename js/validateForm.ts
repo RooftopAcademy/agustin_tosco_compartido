@@ -1,9 +1,7 @@
 import User from "../src/models/User.js";
 import generateError from "../js/generateError.js"
 
-let form: HTMLElement = document.getElementById("form")!;
-
-function ValidateForm(e: Event) : void {
+export default function ValidateForm(e: Event) : void {
 
     e.preventDefault();
 
@@ -36,4 +34,3 @@ function ValidateForm(e: Event) : void {
     window.location.href = `/html/product-list.html`;
 }
 
-form.addEventListener('submit', ValidateForm);
