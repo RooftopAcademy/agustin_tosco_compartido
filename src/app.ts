@@ -4,8 +4,8 @@ import Product from "./models/Product.js";
 import productsList from "./views/productsList.js";
 import fetchProductData from "./fetchProductData.js";
 import fetchProductComments from "./fetchProductComments.js";
-import ValidateForm from "../js/validateForm.js"
-import toggleMenu from "../js/toggleMenu.js"
+import ValidateForm from "../src/scripts/validateForm.js"
+import toggleMenu from "../src/scripts/toggleMenu.js"
 
 let store: Store = new Store;
 

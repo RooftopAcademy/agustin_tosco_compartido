@@ -1,5 +1,4 @@
-import { CommentInterface } from "../interfaces"
-export default class UserComment implements CommentInterface {
+export default class UserComment {
 
     productId: number;
     body: string;

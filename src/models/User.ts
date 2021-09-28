@@ -39,5 +39,4 @@ export default class User implements UserInterface {
     delete(name: string) {
         
     }
-
 }

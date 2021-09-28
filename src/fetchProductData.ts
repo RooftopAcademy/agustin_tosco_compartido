@@ -21,7 +21,6 @@ export default function fetchProductData (productId: string) {
                 </div>
             `;
            }
-           
         });
     })
     .catch(err => {
