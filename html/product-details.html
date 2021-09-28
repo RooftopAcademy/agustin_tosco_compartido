@@ -6,6 +6,7 @@
     <head>
         <link rel="stylesheet" href="../style\product-details.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+        <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1123713137180590081/YuTnZLof_400x400.png"/>
         <title>Product Details</title>
     </head>
     <body>
@@ -15,7 +16,6 @@
             id="header-img"
             src="https://pbs.twimg.com/profile_images/1123713137180590081/YuTnZLof_400x400.png"
           >
-          <h1>WFT + some text</h1>
         </div>
         <div class="search-bar">
           <div class="search-input">
@@ -27,6 +27,8 @@
         </div>
         <div class="dropdown-menu">
           <div class="hamburguer-menu">
+            <div class="cart-counter" id="js-cart">0</div>
+            <i id="icon" class="fas fa-shopping-cart"></i>
             <img id=hamburguer-icon src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png">
           </div>
           <div class="content hidden">
@@ -47,7 +49,7 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
       <div class="nav">
         <ul>
           <ul><a href="/html/index.html" class="nav-link">Home</ul></a>
@@ -57,6 +59,8 @@
       <div id="js-details" class="product-details-container js-product-details">
         </div>
       </div>
+      <div id="js-comment-section" class="comments-section">
+      </div>
       <footer class="footer">
         <ul>
           <ul><a id="st-footer" href="#">Privacy</a></ul>
@@ -65,16 +69,18 @@
         </ul>
         <span>Copyright 2021, WFT</span>
       </footer>
-      <script defer src="../src/models/User.js"></script>
-      <script defer src="../src/models/Catalog.js"></script>
-      <script defer src="../src/models/Cart.js"></script>
-      <script defer src="../src/models/Product.js"></script>
-      <script defer src="../src/fetchProductData.js"></script>
-      <script defer src="../src/fetchProductComments.js"></script>
-      <script defer src="../src/views/productItem.js"></script>
-      <script defer src="../src/views/productsList.js"></script>
-      <script defer src="../src/views/productDetails.js"></script>
-      <script defer src="../js/toggleMenu.js"></script>
-      <script defer src="../src/models/Store.js"></script>
+      <script>var exports = {};</script>
+      <!-- <script defer src="../dist/src/app.js" type="module"></script> -->
+      <script defer src="../dist\src\models\User.js" type="module"></script>
+      <script defer src="../dist\src\models\Catalog.js" type="module"></script>
+      <script defer src="../dist\src\models\Cart.js" type="module"></script>
+      <script defer src="../dist\src\models\Product.js" type="module"></script>
+      <script defer src="../dist\src\fetchProductData.js" type="module"></script>
+      <script defer src="../dist\src\fetchProductComments.js" type="module"></script>
+      <script defer src="../dist\src\views\productItem.js" type="module"></script>
+      <script defer src="../dist\src\views\productsList.js" type="module"></script>
+      <script defer src="../dist\src\views\productDetails.js" type="module"></script>
+      <script defer src="../dist\js\toggleMenu.js" type="module"></script>
+      <script defer src="../dist\src\models\Store.js" type="module"></script>
     </body>
 </html>

@@ -1,10 +1,15 @@
-class Cart {
-    // agregar, eliminar, actualizar
+import Product from "./Product.js"
+import { CartInterface } from "../interfaces.js";
+
+export default class Cart implements CartInterface {
+
+    products: Product[];
+
     constructor() {
         this.products = [];
     }
 
-    add(p) {
+    add(p: Product) : void | Error {
         if (p instanceof Product) {
             this.products.push(p);
         } else {

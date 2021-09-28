@@ -1,18 +1,18 @@
-function fetchProductComments (productId) {
+export default function fetchProductComments (productId: string) {
     fetch(`https://jsonplaceholder.typicode.com/comments`)
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((json) => {
-        data = json;
-        let commentsSection = document.getElementById("js-comment-section");
-        data.forEach((el) => {
+        let data : any = json;
+        let commentsSection: HTMLElement = document.getElementById("js-comment-section")!;
+        data.forEach((el: any) => {
             if(el.id == productId) {
-                comment = el;
+                let comment = el;
                 let nombre = comment.email.slice(0, comment.email.indexOf("@"));
                 commentsSection.innerHTML = `
-                    <h1>${nombre}</h1>
+                    <h1>Comments</h1>
+                    <h2>${nombre}</h2>
                     <ul>
                         <li>${comment.body}</li>
-                        <li>Description here and here Description here</li>
                     </ul>
                     `
            }
@@ -21,6 +21,7 @@ function fetchProductComments (productId) {
     .catch(err => {
         console.log(err);
         let message = err.StatusText || "An error occurred";
-        fetchedData.innerHTML = `Error ${err.status}: ${message}`;
+        let commentsSection: HTMLElement = document.getElementById("js-comment-section")!;
+        commentsSection.innerHTML = `Error ${err.status}: ${message}`;
     })
 }
