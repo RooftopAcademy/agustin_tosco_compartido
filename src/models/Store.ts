@@ -1,14 +1,9 @@
-import UserComment from "./Comment.js";
 import Catalog from "./Catalog.js";
 import Cart from "./Cart.js";
 import Product from "./Product.js";
-import productsList from "../views/productsList.js";
-import fetchProductData from "../fetchProductData.js";
-import fetchProductComments from "../fetchProductComments.js";
 import User from "./User.js";
-import { StoreInterface } from "../interfaces.js";
-
-class Store implements StoreInterface {
+import { CategoryEnum } from "./Enum.js";
+export default class Store {
     
     user: User;
     catalog: Catalog;
@@ -22,16 +17,35 @@ class Store implements StoreInterface {
 
     fetchProducts() : void {
 
+        fetch(`https://jsonplaceholder.typicode.com/posts`)
+        .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+        .then((json) => {
+            let data: any = json;
+            data.forEach((el: any) => {
+                if(el.id < 10) {
+                    let product: Product = new Product;
+                    product.name = el.title.slice(0,10);
+                    product.price = "$1111";
+                    product.id = el.id;
+                    
+                    this.catalog.add(product);
+               }
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
         let data: any[any] = [
-            {id:1, name: "Libro 1", price: "$123", category: Category.Book},
-            {id:2, name: "Curso 1", price: "$223", category: Category.Course},
-            {id:3, name: "Clase 1", price: "$1323", category: Category.Software},
-            {id:1, name: "Libro 1", price: "$123", category: Category.Book},
-            {id:2, name: "Curso 1", price: "$223", category: Category.Course},
-            {id:3, name: "Clase 1", price: "$1323", category: Category.Course},
-            {id:1, name: "Libro 1", price: "$123", category: Category.Book},
-            {id:2, name: "Curso 1", price: "$223", category: Category.Course},
-            {id:3, name: "Clase 1", price: "$1323", category: Category.Course}
+            {id:1, name: "El Inversor Inteligente", price: "$123", category: CategoryEnum.Book},
+            {id:2, name: "Finanzas personales", price: "$223", category: CategoryEnum.Course},
+            {id:3, name: "Introducción al Análisis Fundamental", price: "$1323", category: CategoryEnum.Book},
+            {id:1, name: "Security Analysis", price: "$123", category: CategoryEnum.Book},
+            {id:2, name: "Personal & Family Financial Planning", price: "$223", category: CategoryEnum.Course},
+            {id:3, name: "Xero", price: "$1323", category: CategoryEnum.Software},
+            {id:1, name: "FreeAgent", price: "$123", category: CategoryEnum.Software},
+            {id:2, name: "AmiBroker", price: "$223", category: CategoryEnum.Software},
+            {id:3, name: "NinjaTrader", price: "$1323", category: CategoryEnum.Software}
         ]
 
         // debo definir una interface para el data
@@ -53,47 +67,3 @@ class Store implements StoreInterface {
         return this.catalog;
     }
 }
-
-let store: Store = new Store;
-
-store.fetchProducts();
-
-let catalog: Catalog = store.getCatalog();
-
-renderProductsList();
-
-addListener();
-
-function renderProductsList() : void {
-    Array.from(document.getElementsByClassName('js-product-list'))
-    .forEach((list) => {
-        list.innerHTML = productsList(catalog.all());
-    })
-}
-
-function addListener() : void {
-    document.querySelectorAll(".js-add-to-cart")
-    .forEach(btn => {
-        btn.addEventListener('click', function (this: HTMLInputElement) : void {
-            let product: Product = store.getCatalog().findById(this.dataset.productId!);
-            store.getCart().add(product);
-            let cartCounter: HTMLElement = document.getElementById("js-cart")!;
-            cartCounter.innerHTML = String(store.getCart().products.length);
-        })
-    })
-    
-    document.querySelectorAll(".js-details")
-    .forEach(btn => {
-        btn.addEventListener('click', function (this: HTMLInputElement) : void {
-            let productId = this.dataset.productId;
-            window.location.href = `/html/product-details.html?id=${productId}`;
-        })
-    })
-}
-
-if(window.location.pathname == '/html/product-details.html') {
-    let url = new URL(window.location.href);
-    let productId = url.searchParams.get("id");
-    fetchProductData(productId!);
-    fetchProductComments(productId!);
-  }

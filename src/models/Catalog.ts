@@ -1,7 +1,6 @@
 import Product from "./Product";
-import { CatalogInterface } from "../interfaces";
 
-export default class Catalog implements CatalogInterface {
+export default class Catalog {
 
     products: Product[];
 

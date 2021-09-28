@@ -1,6 +1,4 @@
-import { ProductInterface } from "../interfaces";
-
-export default class Product implements ProductInterface {
+export default class Product {
     
     name: string;
     price: string;

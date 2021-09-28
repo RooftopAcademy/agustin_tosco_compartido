@@ -15,8 +15,35 @@ body {
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 33%;
+    display: flex;
+    justify-content: left;
+}
+
+.empty {
+  width: 33%;
+}
+
+.login {
+  width: 33%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-right: 20px;
+}
+
+#login-button {
+  height: 40px;
+  font-weight: 900;
+  max-width: 160px;
+  font-size: 12px;
+  width: 80px;
+  height: 30px;
+  background-color: #f1c40f;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
 }
 
 .header {
@@ -180,46 +207,61 @@ body {
 }
 
 @media (min-width: 700px) {
-    .welcome-section {
-        position: absolute;
-        top: 100px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: auto;
-        height: min-content;
-        margin: auto;
+
+    .logo {
+      width: 33%;
+      margin-left: 20px;
+      display: flex;
+      justify-content: left;
     }
 
-   
+    .empty {
+      width: 33%;
+    }
+
+    #login-button:hover {
+      background-color: rgba(242,130,15,1);
+      transition: background-color 1s;
+      }
+
+    .welcome-section {
+      position: absolute;
+      top: 100px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: min-content;
+      margin: auto;
+    }
 
     .welcome-section > h1 {
-        color: rgba(242,130,15,1);
-        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.481);
-        font-size: 50px;
-        font-family: 'Roboto Condensed', arial;
-        text-shadow: black;
+      color: rgba(242,130,15,1);
+      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.481);
+      font-size: 50px;
+      font-family: 'Roboto Condensed', arial;
+      text-shadow: black;
     }
 
     .button-get-started {
-        padding: 0 20px;
-        height: 40px;
-        font-size: 1em;
-        font-weight: 900;
-        max-width: 160px;
-        width: 100%;
-        height: 30px;
-        margin: 15px;
-        background-color: #f1c40f;
-        text-align: center;
-        border-radius: 15px;
-        border: 1px solid rgb(0, 0, 0);
-        box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+      padding: 0 20px;
+      height: 40px;
+      font-size: 1em;
+      font-weight: 900;
+      max-width: 160px;
+      width: 100%;
+      height: 30px;
+      margin: 15px;
+      background-color: #f1c40f;
+      text-align: center;
+      border-radius: 15px;
+      border: 1px solid rgb(0, 0, 0);
+      box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
     }
     
     .button-get-started:hover {
-        background-color: rgba(242,130,15,1);
-        transition: background-color 1s;
+      background-color: rgba(242,130,15,1);
+      transition: background-color 1s;
       }
 }
 

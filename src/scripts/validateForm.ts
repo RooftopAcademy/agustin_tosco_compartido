@@ -1,5 +1,5 @@
-import User from "../src/models/User.js";
-import generateError from "../js/generateError.js"
+import User from "../models/User.js";
+import generateError from "./generateError.js"
 
 export default function ValidateForm(e: Event) : void {
 
@@ -7,10 +7,7 @@ export default function ValidateForm(e: Event) : void {
 
     let name = document.getElementById("name")! as HTMLInputElement;
     let email = document.getElementById("email")! as HTMLInputElement;
-    let age = document.getElementById("age")! as HTMLInputElement;
-
-    console.log(name.value);
-    
+    let age = document.getElementById("age")! as HTMLInputElement;    
 
     if(name.value == '' || name == null) {
         return generateError("name");
