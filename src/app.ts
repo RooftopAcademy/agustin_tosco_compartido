@@ -1,12 +1,12 @@
-import Store from "./models/Store.js";
-import Catalog from "./models/Catalog.js";
-import Product from "./models/Product.js";
+import Store from "./entities/Store.js";
+import Catalog from "./entities/Catalog.js";
+import Product from "./entities/Product.js";
 import fetchProductData from "./services/fetchProductData.js";
 import fetchProductComments from "./services/fetchProductComments.js";
 import ValidateForm from "../src/scripts/validateForm.js";
 import toggleMenu from "../src/scripts/toggleMenu.js";
 import fetchProducts from "./services/fetchProducts.js";
-import renderProductsList from "./components/renderProductList.js"
+import renderProductsList from "./services/renderProductList.js"
 import addListeners from "./helpers/addListeners.js"
 
 let store: Store = new Store;
