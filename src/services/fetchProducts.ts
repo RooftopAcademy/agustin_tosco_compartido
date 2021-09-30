@@ -1,6 +1,6 @@
-import Product from "../models/Product.js";
-import Store from "../models/Store.js";
-import { CategoryEnum } from "../models/Enum.js";
+import Product from "../entities/Product.js";
+import Store from "../entities/Store.js";
+import { CategoryEnum } from "../entities/Enum.js";
 
 export default function fetchProducts(store: Store) : void {
 

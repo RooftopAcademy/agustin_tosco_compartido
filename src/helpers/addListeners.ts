@@ -1,5 +1,5 @@
-import Product from "../models/Product";
-import Store from "../models/Store";
+import Product from "../entities/Product";
+import Store from "../entities/Store";
 
 export default function addListeners(store: Store) : void {
     document.querySelectorAll(".js-add-to-cart")
