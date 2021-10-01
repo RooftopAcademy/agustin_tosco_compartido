@@ -18,8 +18,19 @@
           </div>
           <div class="empty"></div>
           <div class="login">
-              <input id="login-button" type="button" value="Login">
-          </div>
+            <form id="login">
+                    <input id="login-button" type="button" value="Login">
+                    <div class="login-modal hidden">
+                    <div class="login-container hidden">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <button type="submit">Login</button>
+                    </div>
+                    </div>
+            </form>
+        </div>
       </div>
       <div class="welcome-section">
           <h1>Welcome to WFT!</h1>

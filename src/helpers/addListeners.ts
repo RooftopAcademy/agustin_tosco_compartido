@@ -1,6 +1,6 @@
 import Product from "../entities/Product";
 import Store from "../entities/Store";
-import toggleMenu from "../scripts/toggleMenu";
+import toggleVisibility from "../scripts/toggleVisibility";
 import ValidateForm from "../scripts/validateForm";
 import fetchProductComments from "../services/fetchProductComments";
 import fetchProductData from "../services/fetchProductData";
@@ -27,11 +27,9 @@ export default function addListeners(store: Store) : void {
     document.querySelectorAll(".login-button")
     .forEach(btn => {
         btn.addEventListener('click', function (this: HTMLInputElement) : void {
-            let productId = this.dataset.productId;
-            window.location.href = `/product-details.html?id=${productId}`;
+            
         })
     })
-
     
     if (window.location.pathname == '/product-details.html') {
         let url = new URL(window.location.href);
@@ -41,13 +39,21 @@ export default function addListeners(store: Store) : void {
     }
 
     if (document.getElementById("form")) {
-        let form: HTMLElement = document.getElementById("form")!;    
+        let form: HTMLElement = document.getElementById("form")!;
         form.addEventListener('submit', ValidateForm);
     }
 
     if (document.querySelector(".dropdown-menu")) {
         let dropdown: HTMLElement = document.querySelector("#hamburguer-icon")!;
-        dropdown.addEventListener('click', toggleMenu);
+        dropdown.addEventListener('click', toggleVisibility);
     }
 
+    if (document.querySelector(".login-modal")) {
+        let loginButton: HTMLElement = document.querySelector("#login-button")!;
+        loginButton.addEventListener('click', toggleVisibility);
+    }
+
+    if (document.querySelector("#login")) {
+
+    }
 }
