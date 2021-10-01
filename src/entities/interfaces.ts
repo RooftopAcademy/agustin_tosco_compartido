@@ -16,4 +16,11 @@ export interface UserInterface {
 
     getEmail() : string;
 }
+
+export interface PageInterface {
+    render(c: HTMLElement) : void
+
+    registerEvents(d: Document) : void
+}
+
  

@@ -1,6 +1,6 @@
-import Product from "../entities/Product.js";
-import Store from "../entities/Store.js";
-import { CategoryEnum } from "../entities/Enum.js";
+import Product from "../entities/Product";
+import Store from "../entities/Store";
+import { CategoryEnum } from "../entities/Enum";
 
 export default function fetchProducts(store: Store) : void {
 

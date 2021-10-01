@@ -1,5 +1,5 @@
-import User from "../entities/User.js";
-import generateError from "./generateError.js"
+import User from "../entities/User";
+import generateError from "./generateError"
 
 export default function ValidateForm(e: Event) : void {
 

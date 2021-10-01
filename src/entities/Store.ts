@@ -1,6 +1,6 @@
-import Catalog from "./Catalog.js";
-import Cart from "./Cart.js";
-import User from "./User.js";
+import Catalog from "./Catalog";
+import Cart from "./Cart";
+import User from "./User";
 
 export default class Store {
     

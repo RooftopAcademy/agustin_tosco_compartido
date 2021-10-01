@@ -1,13 +1,13 @@
-import Store from "./entities/Store.js";
-import Catalog from "./entities/Catalog.js";
-import Product from "./entities/Product.js";
-import fetchProductData from "./services/fetchProductData.js";
-import fetchProductComments from "./services/fetchProductComments.js";
-import ValidateForm from "../src/scripts/validateForm.js";
-import toggleMenu from "../src/scripts/toggleMenu.js";
-import fetchProducts from "./services/fetchProducts.js";
-import renderProductsList from "./services/renderProductList.js"
-import addListeners from "./helpers/addListeners.js"
+import Store from "./entities/Store";
+import Catalog from "./entities/Catalog";
+import fetchProductData from "./services/fetchProductData";
+import fetchProductComments from "./services/fetchProductComments";
+import ValidateForm from "../src/scripts/validateForm";
+import toggleMenu from "../src/scripts/toggleMenu";
+import fetchProducts from "./services/fetchProducts";
+import renderProductsList from "./services/renderProductList"
+import addListeners from "./helpers/addListeners"
+import getCurrentRoute from "./helpers/router"
 
 let store: Store = new Store;
 
@@ -19,7 +19,12 @@ renderProductsList(document, catalog);
 
 addListeners(store);
 
+// getCurrentRoute(window.location.pathname);
+
 // Need to move and optimize/generalize this functions
+
+console.log("asd");
+
 
 if (window.location.pathname == '/product-details.html') {
     let url = new URL(window.location.href);
@@ -29,7 +34,7 @@ if (window.location.pathname == '/product-details.html') {
   }
 
 if (document.getElementById("form")) {
-    let form: HTMLElement = document.getElementById("form")!;
+    let form: HTMLElement = document.getElementById("form")!;    
     form.addEventListener('submit', ValidateForm);
 }
 
