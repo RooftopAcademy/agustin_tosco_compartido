@@ -28,6 +28,6 @@ export default function ValidateForm(e: Event) : void {
 
     alert(`Bienvenido, ${name.value}`);
 
-    window.location.href = `/html/product-list.html`;
+    window.location.href = `/product-list.html`;
 }
 

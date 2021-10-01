@@ -1,50 +1,27 @@
 import Store from "./models/Store.js";
 import Catalog from "./models/Catalog.js";
 import Product from "./models/Product.js";
-import productsList from "./views/productsList.js";
-import fetchProductData from "./fetchProductData.js";
-import fetchProductComments from "./fetchProductComments.js";
-import ValidateForm from "../src/scripts/validateForm.js"
-import toggleMenu from "../src/scripts/toggleMenu.js"
+import fetchProductData from "./services/fetchProductData.js";
+import fetchProductComments from "./services/fetchProductComments.js";
+import ValidateForm from "../src/scripts/validateForm.js";
+import toggleMenu from "../src/scripts/toggleMenu.js";
+import fetchProducts from "./services/fetchProducts.js";
+import renderProductsList from "./components/renderProductList.js"
+import addListeners from "./helpers/addListeners.js"
 
 let store: Store = new Store;
 
-store.fetchProducts();
+fetchProducts(store);
 
 let catalog: Catalog = store.getCatalog();
 
-renderProductsList();
+renderProductsList(document, catalog);
 
-addListener();
+addListeners(store);
 
-function renderProductsList() : void {
-    Array.from(document.getElementsByClassName('js-product-list'))
-    .forEach((list) => {
-        list.innerHTML = productsList(catalog.all());
-    })
-}
+// Need to move and optimize/generalize this functions
 
-function addListener() : void {
-    document.querySelectorAll(".js-add-to-cart")
-    .forEach(btn => {
-        btn.addEventListener('click', function (this: HTMLInputElement) : void {
-            let product: Product = store.getCatalog().findById(this.dataset.productId!);
-            store.getCart().add(product);
-            let cartCounter: HTMLElement = document.getElementById("js-cart")!;
-            cartCounter.innerHTML = String(store.getCart().products.length);
-        })
-    })
-    
-    document.querySelectorAll(".js-details")
-    .forEach(btn => {
-        btn.addEventListener('click', function (this: HTMLInputElement) : void {
-            let productId = this.dataset.productId;
-            window.location.href = `/html/product-details.html?id=${productId}`;
-        })
-    })
-}
-
-if(window.location.pathname == '/html/product-details.html') {    
+if (window.location.pathname == '/product-details.html') {
     let url = new URL(window.location.href);
     let productId = url.searchParams.get("id");
     fetchProductData(productId!);
@@ -53,7 +30,7 @@ if(window.location.pathname == '/html/product-details.html') {
 
 if (document.getElementById("form")) {
     let form: HTMLElement = document.getElementById("form")!;
-    form.addEventListener('submit', ValidateForm);    
+    form.addEventListener('submit', ValidateForm);
 }
 
 if (document.querySelector(".dropdown-menu")) {
