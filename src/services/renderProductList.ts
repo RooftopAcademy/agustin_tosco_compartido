@@ -1,5 +1,5 @@
-import Catalog from "../models/Catalog.js";
-import productsList from "../helpers/productsList.js";
+import Catalog from "../entities/Catalog";
+import productsList from "../helpers/productsList";
 
 export default function renderProductsList(document: Document, catalog: Catalog) : void {
     Array.from(document.getElementsByClassName('js-product-list'))

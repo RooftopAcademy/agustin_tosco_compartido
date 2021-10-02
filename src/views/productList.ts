@@ -1,13 +1,10 @@
-export default function productDetails() {
-    let doc : HTMLElement = document.getElementById("product-details-content")!;
+export default function productList() {    
+    let doc : HTMLElement = document.getElementById("product-list-content")!;
     doc.innerHTML =
     `
         <div class="header">
             <div class="logo">
-            <img
-                id="header-img"
-                src="https://pbs.twimg.com/profile_images/1123713137180590081/YuTnZLof_400x400.png"
-            >
+            <img id="header-img" src="https://pbs.twimg.com/profile_images/1123713137180590081/YuTnZLof_400x400.png">
             </div>
             <div class="search-bar">
             <div class="search-input">
@@ -40,7 +37,7 @@ export default function productDetails() {
                 <p>Sign Out</p>
                 </div>
             </div>
-            </div>
+        </div>
         </div>
         <div class="nav">
             <ul>
@@ -48,12 +45,10 @@ export default function productDetails() {
             <ul><a href="/product-list.html" class="nav-link">Product List</ul></a>
             </ul>
         </div>
-        <div id="js-details" class="product-details-container js-product-details">
-            </div>
+        <div class="product-container js-product-list">
+            
         </div>
-        <div id="js-comment-section" class="comments-section">
-        </div>
-        <footer class="footer">
+        <footer>
             <ul>
             <ul><a id="st-footer" href="#">Privacy</a></ul>
             <ul><a id="st-footer" href="#">Terms</a></ul>
