@@ -1,3 +1,8 @@
+
+/**
+ * This service will be replaced in the future by fetchProducts.ts
+ */
+
 export default function fetchProductData (productId: string) {
     fetch(`https://jsonplaceholder.typicode.com/posts`)
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
