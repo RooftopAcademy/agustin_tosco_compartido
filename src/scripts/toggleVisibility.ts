@@ -1,6 +1,10 @@
-export default function toggleVisibility() : void {
+export default function toggleVisibility(e: Event) : void {
 
-    if(document.querySelector(".content")) {
+    let element = (e.target as Element).id
+    
+
+    if(element == "hamburguer-icon") {
+       
         let menu: HTMLElement = document.querySelector(".content")!;
 
         let hidden: string = 'hidden';
@@ -9,7 +13,8 @@ export default function toggleVisibility() : void {
         menu.classList.contains(hidden)?menu.classList.replace(hidden, visible):menu.classList.replace(visible, hidden);
     }
 
-    if(document.querySelector(".login-modal")) {
+    if(element == "login-button") {
+        
         let loginModal: HTMLElement = document.querySelector(".login-modal")!;
         let loginContent: HTMLElement = document.querySelector(".login-container")!;
 

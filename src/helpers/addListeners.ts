@@ -1,6 +1,6 @@
 import Product from "../entities/Product";
 import Store from "../entities/Store";
-import login from "../scripts/login";
+import login from "../scripts/logUser";
 import toggleVisibility from "../scripts/toggleVisibility";
 import ValidateForm from "../scripts/validateForm";
 import fetchProductComments from "../services/fetchProductComments";
@@ -57,9 +57,5 @@ export default function addListeners(store: Store) : void {
     if (document.querySelector("#login")) {
         let loginForm = document.getElementById("login")!;
         loginForm.addEventListener('submit', login);
-    }
-
-    if (document.querySelector(".login-modal")!.getAttribute("visibility") == "visible") {
-        
     }
 }

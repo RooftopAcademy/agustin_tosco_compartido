@@ -15,7 +15,6 @@ renderProductsList(document, catalog);
 
 addListeners(store);
 
-
 // getCurrentRoute(window.location.pathname);
 
 // Need to move and optimize/generalize this functions
