@@ -2,22 +2,23 @@ import { UserInterface } from "./interfaces";
 
 export default class User implements UserInterface {
     
-    name: string;
-    age: number;
     email: string;
+    age: number;
+    password: string; // not practical nor secure, just for testing functionality
 
     constructor() {
-        this.name = "";
-        this.age = 0;
         this.email = "";
+        this.age = 0;
+        this.password = "";
     }
 
-    setName(name: string) {
-        this.name = name;
+    
+    setEmail(email: string) {
+        this.email = email;
     }
 
-    getName() {
-        return this.name;
+    getEmail() {
+        return this.email;
     }
 
     setAge(age: number) {
@@ -28,12 +29,12 @@ export default class User implements UserInterface {
         return this.age;
     }
 
-    setEmail(email: string) {
-        this.email = email;
+    setPass(password: string) {
+        this.password = password;
     }
 
-    getEmail() {
-        return this.email;
+    getPass() {
+        return this.password;
     }
 
     delete(name: string) {

@@ -1,20 +1,22 @@
 export interface UserInterface {
    
-    name: string;
-    age: number;
     email: string;
+    age: number;
+    password: string; // not practical nor secure, just for testing functionality
 
-    setName(name: string) : void;
+    setEmail(email: string) : void;
 
-    getName() : string;
+    getEmail() : string;
 
     setAge(age: number) : void;
 
     getAge() : number;
 
-    setEmail(email: string) : void;
+    setPass(password: string) : void;
 
-    getEmail() : string;
+    getPass() : string;
+
+    delete(email: string) : void;
 }
 
 export interface PageInterface {

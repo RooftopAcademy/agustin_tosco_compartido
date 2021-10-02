@@ -24,5 +24,4 @@ export default function toggleVisibility() : void {
             loginContent.classList.replace(hidden, visible):
                 loginContent.classList.replace(visible, hidden);
     }
-    
 }

@@ -246,9 +246,9 @@ body {
       display: flex;
       flex-direction: column;
       background-color: #fefefe;
-      margin: 20% auto;
+      margin: 15% auto;
       border: 3px solid rgba(250, 131, 20, 0.946);
-      width: 30%;
+      width: 20%;
       border-radius: 5px;
     }
 

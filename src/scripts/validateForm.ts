@@ -21,10 +21,10 @@ export default function ValidateForm(e: Event) : void {
         return generateError("age");
     }
 
-    let user: User = new User()
-    user.setName(name.value);
-    user.setEmail(email.value);
-    user.setAge(parseInt(age.value));
+    // let user: User = new User()
+    // user.setName(name.value);
+    // user.setEmail(email.value);
+    // user.setAge(parseInt(age.value));
 
     alert(`Bienvenido, ${name.value}`);
 
