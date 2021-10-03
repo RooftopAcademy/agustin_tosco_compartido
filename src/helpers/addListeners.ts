@@ -20,6 +20,8 @@ export default function addListeners(store: Store) : void {
     document.querySelectorAll(".js-details")
     .forEach(btn => {
         btn.addEventListener('click', function (this: HTMLInputElement) : void {
+            console.log("here");
+            
             let productId = this.dataset.productId;
             window.location.href = `/product-details.html?id=${productId}`;
         })

@@ -1,6 +1,7 @@
 import Product from "../entities/Product";
 import productItem from "../components/productItem";
+import Catalog from "../entities/Catalog";
 
-export default function productsList(products: Product[]) {
-    return products.map((product) => productItem(product)).join('');
+export default function productsList(products: Product[]) : string{
+    return products.map((product: Product) => productItem(product)).join('');
 }

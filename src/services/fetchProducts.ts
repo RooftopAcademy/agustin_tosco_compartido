@@ -1,47 +1,49 @@
 import Product from "../entities/Product";
 import Store from "../entities/Store";
 import { CategoryEnum } from "../entities/Enum";
+import Catalog from "../entities/Catalog";
 
-export default function fetchProducts(store: Store) : void {
+export default async function fetchProducts(store: Store) {
 
-    // fetch(`https://jsonplaceholder.typicode.com/posts`)
-    // .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-    // .then((json) => {
-    //     let data: any = json;
-    //     data.forEach((el: any) => {
-    //         if(el.id < 10) {
-    //             let product: Product = new Product;
-    //             product.name = el.title.slice(0,10);
-    //             product.price = "$1111";
-    //             product.id = el.id;
-                
-    //             this.catalog.add(product);
-    //        }
-    //     });
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    // })
+    const res = await fetch('https://61587a685167ba00174bbb19.mockapi.io/products')
 
-    let data: any[any] = [
-        {id:1, name: "El Inversor Inteligente", price: "$123", description: "", stock: 1, image: "", category: CategoryEnum.Book},
-        {id:2, name: "Finanzas personales", price: "$223", description: "", stock: 1, image: "", category: CategoryEnum.Course},
-        {id:3, name: "Introducción al Análisis Fundamental", description: "", stock: 1, image: "", price: "$1323", category: CategoryEnum.Book},
-        {id:1, name: "Security Analysis", price: "$123", description: "", stock: 1, image: "", category: CategoryEnum.Book},
-        {id:2, name: "Personal & Family Financial Planning", price: "$223", description: "", stock: 1, image: "", category: CategoryEnum.Course},
-        {id:3, name: "Xero", price: "$1323", description: "", stock: 1, image: "", category:  CategoryEnum.Software},
-        {id:1, name: "FreeAgent", price: "$123", description: "", stock: 1, image: "", category: CategoryEnum.Software},
-        {id:2, name: "AmiBroker", price: "$223", description: "", stock: 1, image: "", category: CategoryEnum.Software},
-        {id:3, name: "NinjaTrader", price: "$1323", description: "", stock: 1, image: "", category: CategoryEnum.Software}
-    ]
+    const products : Product[] = await res.json();
 
-    // debo definir una interface para el data
-    data.forEach((item: {name: string, price: string, id: number}) => {
+    products.forEach((item: any) => {
+
         let product: Product = new Product;
+
+        product.id = item.id;
         product.name = item.name;
         product.price = item.price;
-        product.id = item.id;
-
+        product.description = item.description;
+        product.stock = item.stock;
+        product.image = item.image;
+        product.category = item.category;
+                    
         store.catalog.add(product);
-    })
+        
+        });
+
+    // fetch('https://61587a685167ba00174bbb19.mockapi.io/products')
+    //     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+    //         .then((productList) => {
+                
+    //             productList.forEach((item: any) => {
+                
+    //             let product: Product = new Product;
+
+    //             product.id = item.id;
+    //             product.name = item.name;
+    //             product.price = item.price;
+    //             product.description = item.description;
+    //             product.stock = item.stock;
+    //             product.image = item.image;
+    //             product.category = item.category;
+                            
+    //             store.catalog.add(product);
+                
+    //             });
+    //     });
+
 }
