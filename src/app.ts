@@ -12,25 +12,29 @@ import Product from "./entities/Product";
 
 let store: Store = new Store;
 
-/**
- *  This async function fetchs products available from 'https://61587a685167ba00174bbb19.mockapi.io/products'
- *  and builds the catalog with the products fetched and render the product list on /product-list.html
- */
+
 
 (async function () {
+
+/**
+ *  This async function fetchs products available from 'https://61587a685167ba00174bbb19.mockapi.io/products'
+*  and 
+*/
+
     await fetchProducts(store);
     
     let catalog: Product[] = store.catalog.products;
 
-    await renderProductsList(document, catalog);
-
-    await addListeners(store);
-}());
-
 /**
- *  This function adds the listeners to respective elements in all pages
+ * This function builds the catalog with the products fetched and render the product list on /product-list.html
  */
 
+    await renderProductsList(document, catalog);
 
+    /**
+     *  This function adds the listeners to respective elements in all pages
+     */
 
-// getCurrentRoute(window.location.pathname);
+    await addListeners(store);
+    
+}());
