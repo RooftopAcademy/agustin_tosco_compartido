@@ -3,7 +3,6 @@ import Catalog from "./entities/Catalog";
 import fetchProducts from "./services/fetchProducts";
 import renderProductsList from "./services/renderProductList"
 import addListeners from "./helpers/addListeners"
-import getCurrentRoute from "./helpers/router"
 import Product from "./entities/Product";
 
 /**
@@ -11,8 +10,6 @@ import Product from "./entities/Product";
  */
 
 let store: Store = new Store;
-
-
 
 (async function () {
 
@@ -23,18 +20,18 @@ let store: Store = new Store;
 
     await fetchProducts(store);
     
-    let catalog: Product[] = store.catalog.products;
+    let products: Product[] = store.getCatalog().all();
 
 /**
  * This function builds the catalog with the products fetched and render the product list on /product-list.html
  */
 
-    await renderProductsList(document, catalog);
+    await renderProductsList(document, products);
 
     /**
      *  This function adds the listeners to respective elements in all pages
      */
 
     await addListeners(store);
-    
+
 }());

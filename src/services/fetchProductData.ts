@@ -1,7 +1,5 @@
 
-/**
- * This service will be replaced in the future by fetchProducts.ts
- */
+
 
 export default function fetchProductData (productId: string) {
     fetch(`https://jsonplaceholder.typicode.com/posts`)
