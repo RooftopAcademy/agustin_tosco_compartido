@@ -1,4 +1,4 @@
-export default function fetchProductComments (productId: string) {
+export default function fetchProductComments (productId: string) : void {
     fetch(`https://jsonplaceholder.typicode.com/comments`)
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((json) => {
