@@ -1,20 +1,20 @@
-export default class UserComment {
+export default class Comment {
 
-    productId: number;
+    productId: string;
     body: string;
-    userName: string;
+    name: string;
 
     constructor() {
-        this.productId = 0;
+        this.productId = "";
         this.body = "";
-        this.userName = "";
+        this.name = "";
     }
 
     getProductId(){
         return this.productId;
     }
 
-    setProductId(value: number){
+    setProductId(value: string){
         return this.productId = value;
     }
 
@@ -26,23 +26,23 @@ export default class UserComment {
         return this.body = value;
     }
 
-    getUserName(){
-        return this.userName;
+    getName(){
+        return this.name;
     }
 
-    setUserName(value: string){
-        return this.userName = value;
+    setName(value: string){
+        return this.name = value;
     }
 }
 
-// export class CommentFactory{
-//     static create(obj: UserComment){
-//         let comment = new Comment;
+export class CommentFactory{
+    static create(item: Comment){
+        let comment = new Comment;
 
-//         User.setTarget(obj["postId"])
-//         comment.setBody(obj["body"])
-//         comment.setUserName(obj["name"])
+        comment.setProductId(item["productId"])
+        comment.setBody(item["body"])
+        comment.setName(item["name"])
 
-//         return comment;
-//     }
-//}
+        return comment;
+    }
+}
