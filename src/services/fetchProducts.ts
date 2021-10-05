@@ -17,7 +17,7 @@ export default async function fetchProducts(store: Store) : Promise<void> {
                 product.stock = item.stock;
                 product.image = item.image;
                 product.category = item.category;
-                            
+
                 store.catalog.add(product);
                 });
         });
