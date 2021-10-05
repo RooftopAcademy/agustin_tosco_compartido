@@ -1,24 +1,22 @@
-export default function fetchProductComments (productId: string) : void {
-    fetch(`https://jsonplaceholder.typicode.com/comments`)
+import Comment from "../entities/Comment";
+import renderProductComments from "./renderProductComments";
+
+export default function fetchProductComments (productId: string) {
+    fetch(`https://61587a685167ba00174bbb19.mockapi.io/comments`)
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((json) => {
-        let data : any = json;
-        let commentsSection: HTMLElement = document.getElementById("js-comment-section")!;
-        data.forEach((el: any) => {
-            if(el.id == productId) {
-                let comment = el;
-                let nombre = comment.email.slice(0, comment.email.indexOf("@"));
-                commentsSection.innerHTML = `
-                    <h1>Comments</h1>
-                    <h2>${nombre}</h2>
-                    <ul>
-                        <li>${comment.body}</li>
-                    </ul>
-                    `
-           }
-        })
+        
+        let comments : Comment[] = json;
+
+        /**
+         *  Returns filtered comments for this product
+         */
+
+        let productComments = comments.filter((e: Comment) => e.productId == productId)
+
+        renderProductComments(document, productComments);
     })
-    .catch(err => {
+    .catch((err: { StatusText: string, status: any }) => {
         console.log(err);
         let message = err.StatusText || "An error occurred";
         let commentsSection: HTMLElement = document.getElementById("js-comment-section")!;
