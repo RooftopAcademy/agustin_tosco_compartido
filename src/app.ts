@@ -36,6 +36,6 @@ useLocalStorage.set("store", store);
 
     await addListeners(store);
 
-    sortData(products);
+    //sortData(products);
 
 }());
