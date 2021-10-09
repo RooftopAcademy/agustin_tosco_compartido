@@ -6,6 +6,7 @@ import addListeners from "./helpers/addListeners"
 import Product from "./entities/Product";
 import useLocalStorage from "./helpers/useLocalStorage";
 import sortData from "./services/sortData";
+import { CategoryEnum } from "./entities/Enum"
 
 /**
  *  This line instantiate a new Store and saves it in the localStorage
@@ -36,6 +37,8 @@ useLocalStorage.set("store", store);
 
     await addListeners(store);
 
-    //sortData(products);
+    sortData(products);
+
+    console.log(products);
 
 }());
