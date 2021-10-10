@@ -3,7 +3,7 @@ import { CategoryEnum } from "./Enum";
 export default class Product {
     
     name: string;
-    price: string;
+    price: number;
     description: string;
     stock: number;
     id: number;
@@ -12,7 +12,7 @@ export default class Product {
 
     constructor() {
         this.name = "";
-        this.price = "";
+        this.price = 0;
         this.description = "";
         this.stock = 0;
         this.id = 0;
@@ -28,7 +28,7 @@ export default class Product {
         return this.name;
     }
 
-    setPrice(n: string) {
+    setPrice(n: number) {
         this.price = n;
     }
 
