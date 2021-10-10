@@ -5,6 +5,7 @@ import renderProductsList from "./services/renderProductList"
 import addListeners from "./helpers/addListeners"
 import Product from "./entities/Product";
 import useLocalStorage from "./helpers/useLocalStorage";
+import { sortOrder } from "./entities/Enum";
 
 /**
  *  This line instantiate a new Store and saves it in the localStorage
@@ -42,6 +43,6 @@ useLocalStorage.set("store", store);
 
     list.result = [...products];
 
-    list.getSorting({'key': 'price', 'order': '1'}, {'key': 'name', 'order': '1'})
+    list.getSorting({'key': 'id', 'order': sortOrder.Asc}, {'key': 'name', 'order': sortOrder.Asc})
 
 }());
