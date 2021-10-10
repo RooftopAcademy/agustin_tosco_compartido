@@ -24,10 +24,32 @@ export default abstract class List {
     }
 
     getSorting() {
+        return console.log(this.obj);
+    }
 
+    sortByName() {
+        return this.sortByKey('name');
+    }
+
+    sortByPrice() {
+        return this.sortByKey('price');
+    }
+
+    sortByStock() {
+        return this.sortByKey('stock');
+    }
+
+    sortById() {
+        return this.sortByKey('id');
+    }
+
+    sortByCategory() {
+        return this.sortByKey('category');
     }
 
     sortByKey(key = '') {
+        console.log(key);
+
         return this.result.sort((a, b) => this.sortBy(a, b, key))
     }
 
@@ -36,25 +58,4 @@ export default abstract class List {
         if (a[key] < b[key]) return -1;
         return 0;
     }
-
-    sortByName() {
-        this.sortByKey('name');
-    }
-
-    sortByPrice() {
-        this.sortByKey('price');
-    }
-
-    sortByStock() {
-        this.sortByKey('stock');
-    }
-
-    sortById() {
-        this.sortByKey('id');
-    }
-
-    sortByCategory() {
-        this.sortByKey('category');
-    }
-
 }

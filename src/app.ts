@@ -14,6 +14,7 @@ import List from "./entities/List";
  */
 
 let store: Store = new Store;
+
 useLocalStorage.set("store", store);
 
 (async function () : Promise<void> {
@@ -38,18 +39,19 @@ useLocalStorage.set("store", store);
 
     await addListeners(store);
 
+    
+
     let list = new Catalog;
 
-    list.result = products;
+    list.result = [...products];
 
-    console.log(products);
+    console.log(list.result);
     
+    list.setSorting({'key': 'id', 'order': '1'})
 
-    
+    list.getSorting();
 
-    await console.log(list.sortById());
+    // console.log(list.sortById());
 
-    await renderProductsList(document, products);
 
-    await addListeners(store);
 }());
