@@ -25,4 +25,8 @@ export interface PageInterface {
     registerEvents(d: Document) : void
 }
 
+export interface OrderObject {
+    key: string,
+    order: number
+}
  

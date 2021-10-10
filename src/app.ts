@@ -45,13 +45,8 @@ useLocalStorage.set("store", store);
 
     list.result = [...products];
 
-    console.log(list.result);
-    
-    list.setSorting({'key': 'id', 'order': '1'})
+    list.sortByPrice(1);
 
-    list.getSorting();
-
-    // console.log(list.sortById());
-
+    list.sortByName(1);
 
 }());
