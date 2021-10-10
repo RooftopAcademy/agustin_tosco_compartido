@@ -1,6 +1,5 @@
 import Product from "./Product";
 import { OrderObject } from "./interfaces";
-import useLocalStorage from "../helpers/useLocalStorage";
 
 export default abstract class List {
 
@@ -9,9 +8,11 @@ export default abstract class List {
     result: Product[];
 
     constructor() {
-        this.obj = {key: '', order: 0};
+        this.obj = {key: '', order: ''};
         this.cache = new Map;
         this.result = [];
+        this.sortByPrice = this.sortByPrice.bind(this);
+        this.sortByName = this.sortByName.bind(this);
     }
 
 /**
@@ -23,24 +24,46 @@ export default abstract class List {
  *  5. render products
  */
 
+    getSorting(...obj: OrderObject[]) {
+        
+        const sortTable : any = {
+            'name': this.sortByName,
+            'price': this.sortByPrice
+        }
+
+        for (let item in obj) {
+            
+            let orderBy = obj[item].key;
+            let orderDir = obj[item].order;
+
+            sortTable[orderBy]();
+
+            
+            //this.setSorting(obj[key])
+        }
+    }
+
 //  list.setSorting({'key': 'id', 'order': '1'})
 
     setSorting(obj: OrderObject) {
-
+        
         if(this.cache.has(obj.key)) {
             console.log('true');
-            return this.getItems(obj.key);
+            this.result = this.getItems(obj.key); 
+            return this.result;
         }
         console.log('false');
     }
 
-    getItems(obj: Object) {
-        return console.log(this.cache.get(obj));
+    getItems(obj: Object) : Product[] {
+        return this.cache.get(obj);
     }
 
     setCache(obj: OrderObject, result: Product[]) {
         this.cache.set(obj.key, result)
-        console.log(this.cache.get(obj.key));
+        this.result = [...result];
+        console.log([...result]);
+        
         // useLocalStorage.set(obj.key, {obj, result});
     }
 
@@ -48,16 +71,15 @@ export default abstract class List {
      *  Specific methods for each sorting type
      */
     
-    sortByName(order: number) {
-        
+    sortByName(order: string) {
         const obj = {'key': 'name', 'order': order};
         this.setSorting(obj);
-
+        
         const result = this.sortByKey('name');
         this.setCache(obj, result)
     }
 
-    sortByPrice(order: number) {
+    sortByPrice(order: string) {
         const obj = {'key': 'price', 'order': order};
         this.setSorting(obj);
 

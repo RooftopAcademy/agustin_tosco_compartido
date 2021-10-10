@@ -27,6 +27,6 @@ export interface PageInterface {
 
 export interface OrderObject {
     key: string,
-    order: number
+    order: string
 }
  
