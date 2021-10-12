@@ -1,3 +1,5 @@
+import { sortOrder } from "./Enum";
+
 export interface UserInterface {
    
     email: string;
@@ -27,6 +29,6 @@ export interface PageInterface {
 
 export interface OrderObject {
     key: string,
-    order: string
+    order: sortOrder
 }
  

@@ -20,12 +20,10 @@ export default abstract class List {
     }
 
 /**
- *  1. check if key and order was already calculated
- *  2.1. if true => return that array
- *  2.2. if not => calculate new list
- *      3. store new list in cache and in sort obj
- *  4. return new list
- *  5. render products
+*   1.  first sort
+    2.  divide this result in different arrays
+    3.  order each array separately
+    4.  join arrays in one
  */
 
     getSorting(...obj: OrderObject[]) : void {
@@ -52,7 +50,6 @@ export default abstract class List {
         
         if(this.cache.has(obj.key)) {
             this.result = this.getItems(obj.key); 
-            return this.result;
         }
     }
 
@@ -75,7 +72,7 @@ export default abstract class List {
         this.setSorting(obj);
         
         const result = this.sortByKey('name', order);
-        this.setCache(obj, result)
+        this.setCache(obj, result);
     }
 
     sortByPrice(order: sortOrder) : void {
@@ -83,7 +80,7 @@ export default abstract class List {
         this.setSorting(obj);
 
         const result = this.sortByKey('price', order);
-        this.setCache(obj, result)
+        this.setCache(obj, result);
     }
 
     sortByStock(order: sortOrder) : void {
@@ -91,7 +88,7 @@ export default abstract class List {
         this.setSorting(obj);
 
         const result = this.sortByKey('stock', order);
-        this.setCache(obj, result)
+        this.setCache(obj, result);
     }
 
     sortById(order: sortOrder) : void {
@@ -99,7 +96,7 @@ export default abstract class List {
         this.setSorting(obj);
 
         const result = this.sortByKey('id', order);
-        this.setCache(obj, result)
+        this.setCache(obj, result);
     }
 
     sortByCategory(order: sortOrder) : void {
@@ -107,7 +104,7 @@ export default abstract class List {
         this.setSorting(obj);
 
         const result = this.sortByKey('category', order);
-        this.setCache(obj, result)
+        this.setCache(obj, result);
     }
 
     /**
@@ -116,8 +113,8 @@ export default abstract class List {
 
     sortByKey(key : string = '', order : sortOrder) : Product[] {
         if (parseInt(order) == 1) {
-            return this.result.sort((a, b) => this.sortBy(a, b, key))
-        } else return this.result.sort((a, b) => this.sortBy(b, a, key))
+            return this.result.sort((a, b) => this.sortBy(a, b, key));
+        } else return this.result.sort((a, b) => this.sortBy(b, a, key));
     }
 
     sortBy(a: any, b: any, key: string) : number {
