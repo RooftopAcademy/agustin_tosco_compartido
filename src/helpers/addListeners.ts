@@ -4,15 +4,16 @@ import login from "../scripts/logUser";
 import toggleVisibility from "../scripts/toggleVisibility";
 import ValidateForm from "../scripts/validateForm";
 import fetchProductComments from "../services/fetchProductComments";
-import renderProductComments from "../services/renderProductComments";
 import renderProductData from "../services/renderProductData";
 
 export default function addListeners(store: Store) {
     document.querySelectorAll(".js-add-to-cart")
     .forEach(btn => {
         btn.addEventListener('click', function (this: HTMLInputElement) : void {
+            
             let product: Product = store.getCatalog().findById(this.dataset.productId!);
             store.getCart().add(product);
+            
             let cartCounter: HTMLElement = document.getElementById("js-cart")!;
             cartCounter.innerHTML = String(store.getCart().products.length);
         })
@@ -21,7 +22,9 @@ export default function addListeners(store: Store) {
     document.querySelectorAll(".js-details")
     .forEach(btn => {
         btn.addEventListener('click', function (this: HTMLInputElement) : void {
+            
             let productId = this.dataset.productId;
+            
             window.location.href = `/product-details.html?id=${productId}`;
         })
     })
@@ -36,7 +39,7 @@ export default function addListeners(store: Store) {
 
         let url = new URL(window.location.href);
         let productId = url.searchParams.get("id");
-
+        
         (async function() {
             await renderProductData(store.getCatalog().all(), productId!);
 

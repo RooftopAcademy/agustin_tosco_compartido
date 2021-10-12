@@ -1,3 +1,5 @@
+import { sortOrder } from "./Enum";
+
 export interface UserInterface {
    
     email: string;
@@ -25,4 +27,8 @@ export interface PageInterface {
     registerEvents(d: Document) : void
 }
 
+export interface OrderObject {
+    key: string,
+    order: sortOrder
+}
  

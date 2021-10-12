@@ -4,7 +4,7 @@ export default function productItem (product: Product) : string {
     return `
         <div class="product">
             <div class="level">${product.name}</div>
-            <h2>${product.price}</h2>
+            <h2>$${product.price}</h2>
             <ul>
                 <li>Lorem ipsum.</li>
                 <li>Lorem ipsum, lorem ipsum.</li>

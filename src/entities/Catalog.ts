@@ -1,10 +1,12 @@
 import Product from "./Product";
+import List from "./List";
 
-export default class Catalog {
+export default class Catalog extends List {
 
     products: Product[];
 
     constructor() {
+        super();
         this.products = [];
     }
 

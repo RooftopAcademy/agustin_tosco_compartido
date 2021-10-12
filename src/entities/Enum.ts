@@ -9,3 +9,8 @@ export enum CategoryEnum {
     User,
     Invited
   }
+
+  export enum sortOrder {
+    Asc = '1',
+    Desc = '2'
+  }
