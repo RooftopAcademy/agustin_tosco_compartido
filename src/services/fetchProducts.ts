@@ -20,7 +20,7 @@ export default async function fetchProducts(store: Store) : Promise<void> {
 
                 store.catalog.add(product);
                 });
-                console.log('Fetched from API');
+            console.log('Fetched from API');
                 
     });
 
