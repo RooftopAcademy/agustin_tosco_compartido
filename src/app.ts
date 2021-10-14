@@ -79,17 +79,5 @@ useLocalStorage.set("store", store);
     // tempArray = products.lastIndexOf('123'); 
 
     // products.forEach((product) => console.log((product[key])));
-
-    await fetch('http://localhost:3002/products/get-products')
-        .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-        .then((res) => {
-            console.log(res);
-        });
-
-        const port = process.argv[1];
-
-        console.log(port);
-        
-        
-
+    
 }());
