@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const path = require('path');
-const products = require('C:/projects/rooftop-academy/class-07sep/agustin_tosco_compartido/src/backend/api/routes/products.json')
+const products = require('../data/products.json')
 
 router.get('/', (req, res) => {
     res.send(products);

@@ -34,7 +34,6 @@ export default abstract class List {
             'stock': this.sortByStock,
             'id': this.sortById,
             'category': this.sortByCategory
-
         }
 
         for (let item in obj) {

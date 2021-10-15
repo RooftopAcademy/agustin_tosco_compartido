@@ -6,6 +6,7 @@ import addListeners from "./helpers/addListeners"
 import Product from "./entities/Product";
 import useLocalStorage from "./helpers/useLocalStorage";
 import { sortOrder } from "./entities/Enum";
+import sortProducts from "./scripts/sortProducts";
 
 /**
  *  This lines instantiate a new Store and saves it in the localStorage
@@ -36,43 +37,5 @@ useLocalStorage.set("store", store);
      */
 
     await addListeners(store);
-
-    // let list = new Catalog;
-
-    // list.result = [...products];
-
-    // list.getSorting({'key': 'price', 'order': sortOrder.Asc})
-
-    // const item = {
-    //     "name": "AmiBroker",
-    //     "price": 223,
-    //     "description": "",
-    //     "stock": 5,
-    //     "id": 8,
-    //     "image": "",
-    //     "category": 3
-    //   }
-
-    // let product = new Product()
-
-    // product.id = item.id;
-    // product.name = item.name;
-    // product.price = item.price;
-    // product.description = item.description;
-    // product.stock = item.stock;
-    // product.image = item.image;
-    // product.category = item.category;
-
-    //   list.result.push(product);
-
-    //   console.log(list.result);
-      
-    // let key : keyof Product = "price";
-//   console.log(products.lastIndexOf(key));
-
-    // let tempArray : string[] = [];
-    // tempArray = products.lastIndexOf('123'); 
-
-    // products.forEach((product) => console.log((product[key])));
 
 }());
