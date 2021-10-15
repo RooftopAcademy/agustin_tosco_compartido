@@ -22,7 +22,7 @@ useLocalStorage.set("store", store);
     */
 
     await fetchProducts(store);
-    
+
     let products: Product[] = store.getCatalog().all();
 
     /**
@@ -36,8 +36,6 @@ useLocalStorage.set("store", store);
      */
 
     await addListeners(store);
-
-    
 
     // let list = new Catalog;
 
@@ -69,13 +67,12 @@ useLocalStorage.set("store", store);
 
     //   console.log(list.result);
       
-    let key : keyof Product = "price";
+    // let key : keyof Product = "price";
 //   console.log(products.lastIndexOf(key));
 
-    let tempArray : string[] = [];
-    tempArray = products.lastIndexOf('123'); 
+    // let tempArray : string[] = [];
+    // tempArray = products.lastIndexOf('123'); 
 
-    products.forEach((product) => console.log((product[key])));
-
+    // products.forEach((product) => console.log((product[key])));
 
 }());
