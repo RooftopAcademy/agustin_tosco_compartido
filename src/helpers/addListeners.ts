@@ -25,7 +25,7 @@ export default function addListeners(store: Store) {
             
             let productId = this.dataset.productId;
             
-            window.location.href = `/product-details.html?id=${productId}`;
+            window.location.href = `/product-details.html?${productId}`;
         })
     })
 
@@ -37,11 +37,19 @@ export default function addListeners(store: Store) {
 
     if (window.location.pathname == '/product-details.html') {
 
-        let url = new URL(window.location.href);
-        let productId = url.searchParams.get("id");
+        let url = new URL(window.location.href).toString();
+        let productId = url.substring(url.length - 1);
         
         (async function() {
-            await renderProductData(store.getCatalog().all(), productId!);
+        
+            let product = 
+                await fetch(`http://localhost:3002/products/${productId}`)
+                    .then(res => res.json());
+                    
+            console.log(product);
+            
+
+            await renderProductData(product);
 
             await fetchProductComments(productId!);
         }());

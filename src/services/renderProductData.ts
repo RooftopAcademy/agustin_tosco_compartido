@@ -1,8 +1,6 @@
 import Product from "../entities/Product";
 
-export default function renderProductData (products: Product[], productId: string) {
-    
-    let product = products.filter((e: Product) => e.id == parseInt(productId))[0];
+export default function renderProductData (product: Product) {
     
     let details = document.getElementById("js-details")!;
     details.innerHTML =
