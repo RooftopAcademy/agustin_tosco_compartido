@@ -1,6 +1,7 @@
 import Product from "../entities/Product";
 import Store from "../entities/Store";
 import login from "../scripts/logUser";
+import sortProducts from "../scripts/sortProducts";
 import toggleVisibility from "../scripts/toggleVisibility";
 import ValidateForm from "../scripts/validateForm";
 import fetchProductComments from "../services/fetchProductComments";
@@ -73,5 +74,10 @@ export default function addListeners(store: Store) {
     if (document.querySelector("#login")) {
         let loginForm = document.getElementById("login")!;
         loginForm.addEventListener('submit', login);
+    }
+
+    if(document.querySelector("#filter")) {
+        let filter : HTMLElement = document.getElementById('filter')!;
+        filter.addEventListener('input', () => sortProducts(filter, store));
     }
 }
