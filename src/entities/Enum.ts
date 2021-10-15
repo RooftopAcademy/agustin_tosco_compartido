@@ -1,8 +1,8 @@
-export enum CategoryEnum {
-    Course,
-    Book,
-    Software
-  }
+// export enum CategoryEnum {
+//     Course,
+//     Book,
+//     Software
+//   }
 
   export enum PrivilegesEnum {
     Admin,

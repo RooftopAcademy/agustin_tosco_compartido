@@ -4,7 +4,6 @@ import { sortOrder } from "../entities/Enum";
 import { OrderObject } from "../entities/interfaces";
 import Product from "../entities/Product";
 import Store from "../entities/Store";
-import renderProductData from "../services/renderProductData";
 import renderProductsList from "../services/renderProductList";
 
 export default async function sortProducts(filter: HTMLElement, store: Store) {

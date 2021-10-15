@@ -1,4 +1,4 @@
-import { CategoryEnum } from "./Enum";
+// import { CategoryEnum } from "./Enum";
 
 export default class Product {
     
@@ -8,7 +8,7 @@ export default class Product {
     stock: number;
     id: number;
     image: string;
-    category: CategoryEnum;
+    category: string;
 
     constructor() {
         this.name = "";
@@ -17,7 +17,7 @@ export default class Product {
         this.stock = 0;
         this.id = 0;
         this.image = "";
-        this.category = 0;
+        this.category = '';
     }
 
     setName(n: string) {

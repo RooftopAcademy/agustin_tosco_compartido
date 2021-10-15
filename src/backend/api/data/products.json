@@ -6,7 +6,7 @@
      "stock": 12,
      "id": 1,
      "image": "",
-     "category": 2
+     "category": "Book"
     },
     {
      "name": "Security Analysis",
@@ -15,7 +15,7 @@
      "stock": 12,
      "id": 4,
      "image": "",
-     "category": 2
+     "category": "Book"
     },
     {
      "name": "FreeAgent",
@@ -24,7 +24,7 @@
      "stock": 15,
      "id": 7,
      "image": "",
-     "category": 3
+     "category": "Software"
     },
     {
      "name": "Finanzas personales",
@@ -33,7 +33,7 @@
      "stock": 1,
      "id": 2,
      "image": "",
-     "category": 1
+     "category": "Course"
     },
     {
      "name": "Personal & Family Financial Planning",
@@ -42,7 +42,7 @@
      "stock": 12,
      "id": 5,
      "image": "",
-     "category": 1
+     "category": "Course"
     },
     {
      "name": "AmiBroker",
@@ -51,7 +51,7 @@
      "stock": 5,
      "id": 8,
      "image": "",
-     "category": 3
+     "category": "Software"
     },
     {
      "name": "Introducción al Análisis Fundamental",
@@ -60,7 +60,7 @@
      "stock": 51,
      "id": 3,
      "image": "",
-     "category": 2
+     "category": "Book"
     },
     {
      "name": "Xero",
@@ -69,7 +69,7 @@
      "stock": 15,
      "id": 6,
      "image": "",
-     "category": 2
+     "category": "Book"
     },
     {
      "name": "NinjaTrader",
@@ -78,6 +78,6 @@
      "stock": 15,
      "id": 0,
      "image": "",
-     "category": 3
+     "category": "Software"
     }
    ]
