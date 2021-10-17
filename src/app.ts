@@ -1,12 +1,9 @@
 import Store from "./entities/Store";
-import Catalog from "./entities/Catalog";
 import fetchProducts from "./services/fetchProducts";
 import renderProductsList from "./services/renderProductList"
 import addListeners from "./helpers/addListeners"
 import Product from "./entities/Product";
 import useLocalStorage from "./helpers/useLocalStorage";
-import { sortOrder } from "./entities/Enum";
-import sortProducts from "./scripts/sortProducts";
 
 /**
  *  This lines instantiate a new Store and saves it in the localStorage

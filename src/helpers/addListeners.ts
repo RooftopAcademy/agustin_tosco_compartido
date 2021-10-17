@@ -9,27 +9,28 @@ import fetchProductComments from "../services/fetchProductComments";
 import renderProductData from "../services/renderProductData";
 
 export default function addListeners(store: Store) {
-    document.querySelectorAll(".js-add-to-cart")
-    .forEach(btn => {
-        btn.addEventListener('click', function (this: HTMLInputElement) : void {
-            
-            let product: Product = store.getCatalog().findById(this.dataset.productId!);
-            store.getCart().add(product);
-            
-            let cartCounter: HTMLElement = document.getElementById("js-cart")!;
-            cartCounter.innerHTML = String(store.getCart().products.length);
-        })
-    })
 
-    document.querySelectorAll(".js-details")
-    .forEach(btn => {
-        btn.addEventListener('click', function (this: HTMLInputElement) : void {
-            
-            let productId = this.dataset.productId;
-            
-            window.location.href = `/product-details.html?${productId}`;
+        document.querySelectorAll(".js-add-to-cart")
+        .forEach(btn => {
+            btn.addEventListener('click', function (this: HTMLInputElement) : void {
+                
+                let product: Product = store.getCatalog().findById(this.dataset.productId!);
+                store.getCart().add(product);
+                
+                let cartCounter: HTMLElement = document.getElementById("js-cart")!;
+                cartCounter.innerHTML = String(store.getCart().products.length);
+            })
         })
-    })
+    
+        document.querySelectorAll(".js-details")
+        .forEach(btn => {
+            btn.addEventListener('click', function (this: HTMLInputElement) : void {
+                
+                let productId = this.dataset.productId;
+                
+                window.location.href = `/product-details.html?${productId}`;
+            })
+        })
 
     document.querySelectorAll(".login-button")
     .forEach(btn => {
@@ -88,7 +89,7 @@ export default function addListeners(store: Store) {
             btn.addEventListener('click', (e: Event) => {
                 e.preventDefault();
                 sortCategories(btn, store);
-            }) 
+            })
         })
     }
 }
