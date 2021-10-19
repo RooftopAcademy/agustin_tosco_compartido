@@ -23,5 +23,7 @@ export default function login(e: Event) : void {
 
     console.log(useLocalStorage.getAll());
 
+    alert(`Bienvenido, ${user}`);
+
     window.location.href = "/product-list.html"
 }

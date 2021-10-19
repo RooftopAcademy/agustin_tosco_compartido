@@ -48,9 +48,6 @@ export default function addListeners(store: Store) {
             let product = 
                 await fetch(`http://localhost:3002/products/${productId}`)
                     .then(res => res.json());
-                    
-            console.log(product);
-            
 
             await renderProductData(product);
 
