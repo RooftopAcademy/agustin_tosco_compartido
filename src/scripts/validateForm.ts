@@ -7,7 +7,7 @@ export default function ValidateForm(e: Event) : void {
 
     let name = document.getElementById("name")! as HTMLInputElement;
     let email = document.getElementById("email")! as HTMLInputElement;
-    let age = document.getElementById("age")! as HTMLInputElement;    
+    let age = document.getElementById("age")! as HTMLInputElement;
 
     if(name.value == '' || name == null) {
         return generateError("name");
@@ -25,4 +25,3 @@ export default function ValidateForm(e: Event) : void {
 
     window.location.href = `/product-list.html`;
 }
-
