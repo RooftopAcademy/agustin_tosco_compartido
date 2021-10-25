@@ -7,7 +7,7 @@ export default function ValidateForm(e: Event) : void {
 
     let name = document.getElementById("name")! as HTMLInputElement;
     let email = document.getElementById("email")! as HTMLInputElement;
-    let age = document.getElementById("age")! as HTMLInputElement;    
+    let age = document.getElementById("age")! as HTMLInputElement;
 
     if(name.value == '' || name == null) {
         return generateError("name");
@@ -21,13 +21,7 @@ export default function ValidateForm(e: Event) : void {
         return generateError("age");
     }
 
-    // let user: User = new User()
-    // user.setName(name.value);
-    // user.setEmail(email.value);
-    // user.setAge(parseInt(age.value));
-
-    alert(`Bienvenido, ${name.value}`);
+    alert(`Thank you for joining our newletter, ${name.value}!`)
 
     window.location.href = `/product-list.html`;
 }
-

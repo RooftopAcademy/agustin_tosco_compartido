@@ -1,5 +1,6 @@
 import Product from "../entities/Product";
 import Store from "../entities/Store";
+import dynamicSearch from "../scripts/dynamicSearch";
 import login from "../scripts/logUser";
 import sortCategories from "../scripts/sortCategories";
 import sortProducts from "../scripts/sortProducts";
@@ -10,27 +11,27 @@ import renderProductData from "../services/renderProductData";
 
 export default function addListeners(store: Store) {
 
-        document.querySelectorAll(".js-add-to-cart")
-        .forEach(btn => {
-            btn.addEventListener('click', function (this: HTMLInputElement) : void {
-                
-                let product: Product = store.getCatalog().findById(this.dataset.productId!);
-                store.getCart().add(product);
-                
-                let cartCounter: HTMLElement = document.getElementById("js-cart")!;
-                cartCounter.innerHTML = String(store.getCart().products.length);
-            })
+    document.querySelectorAll(".js-add-to-cart")
+    .forEach(btn => {
+        btn.addEventListener('click', function (this: HTMLInputElement) : void {
+            
+            let product: Product = store.getCatalog().findById(this.dataset.productId!);
+            store.getCart().add(product);
+            
+            let cartCounter: HTMLElement = document.getElementById("js-cart")!;
+            cartCounter.innerHTML = String(store.getCart().products.length);
         })
-    
-        document.querySelectorAll(".js-details")
-        .forEach(btn => {
-            btn.addEventListener('click', function (this: HTMLInputElement) : void {
-                
-                let productId = this.dataset.productId;
-                
-                window.location.href = `/product-details.html?${productId}`;
-            })
+    })
+
+    document.querySelectorAll(".js-details")
+    .forEach(btn => {
+        btn.addEventListener('click', function (this: HTMLInputElement) : void {
+            
+            let productId = this.dataset.productId;
+            
+            window.location.href = `/product-details.html?${productId}`;
         })
+    })
 
     document.querySelectorAll(".login-button")
     .forEach(btn => {
@@ -48,9 +49,6 @@ export default function addListeners(store: Store) {
             let product = 
                 await fetch(`http://localhost:3002/products/${productId}`)
                     .then(res => res.json());
-                    
-            console.log(product);
-            
 
             await renderProductData(product);
 
@@ -91,5 +89,10 @@ export default function addListeners(store: Store) {
                 sortCategories(btn, store);
             })
         })
+    }
+
+    if(document.querySelector("#search-input-bar")) {
+        let searchBar : HTMLInputElement = document.querySelector("#search-input-bar")!
+        addEventListener('keyup', () => dynamicSearch(searchBar.value, store));
     }
 }
