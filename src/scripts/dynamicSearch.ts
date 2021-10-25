@@ -1,7 +1,8 @@
+import Product from "../entities/Product";
 import Store from "../entities/Store";
 import renderProductsList from "../services/renderProductList";
 
-export default function dynamicSearch(input: string, store: Store) {
+export default async function dynamicSearch(input: string, store: Store) {
     console.log(`Searching ${input}...`);
 
     let products = store.getCatalog().all();
@@ -13,16 +14,31 @@ export default function dynamicSearch(input: string, store: Store) {
             .includes(input.toLowerCase());
     })
 
-    // let p : HTMLElement = document.createElement('p');
-
-    // p.style.cssText = 'position:absolute;top:300px;left:300px;width:200px;height:200px;display:block;'
-    // p.textContent = 'paragraph';
- 
-    // document.getElementById("search-input-bar")?.appendChild(p);
- 
-    //https://www.youtube.com/watch?v=M3PbUwgEecU
-
     renderProductsList(document, []);
     renderProductsList(document, filteredProducts);
-
+    
+    await (() => {
+        
+        document.querySelectorAll(".js-add-to-cart")
+        .forEach(btn => {
+            btn.addEventListener('click', function (this: HTMLInputElement) : void {
+                
+                let product: Product = store.getCatalog().findById(this.dataset.productId!);
+                store.getCart().add(product);
+                
+                let cartCounter: HTMLElement = document.getElementById("js-cart")!;
+                cartCounter.innerHTML = String(store.getCart().products.length);
+            })
+        })
+    
+        document.querySelectorAll(".js-details")
+        .forEach(btn => {
+            btn.addEventListener('click', function (this: HTMLInputElement) : void {
+                
+                let productId = this.dataset.productId;
+                
+                window.location.href = `/product-details.html?${productId}`;
+            })
+        })
+    })();
 }
