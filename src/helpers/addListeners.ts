@@ -93,6 +93,6 @@ export default function addListeners(store: Store) {
 
     if(document.querySelector("#search-input-bar")) {
         let searchBar : HTMLInputElement = document.querySelector("#search-input-bar")!
-        addEventListener('keyup', () => dynamicSearch(searchBar.value));
+        addEventListener('keyup', () => dynamicSearch(searchBar.value, store));
     }
 }
