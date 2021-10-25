@@ -9,7 +9,7 @@ import ValidateForm from "../scripts/validateForm";
 import fetchProductComments from "../services/fetchProductComments";
 import renderProductData from "../services/renderProductData";
 
-export default function addListeners(store: Store) {
+export default async function addListeners(store: Store) {
 
     document.querySelectorAll(".js-add-to-cart")
     .forEach(btn => {
