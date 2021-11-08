@@ -11,6 +11,7 @@ ___
 * General Info
 * Technologies
 * Setup
+* Contributing
 
 ## General Info
 
@@ -45,7 +46,7 @@ In your console run the following code:
 npm run build && npm run dev
 ```
 
-Remember to configure your .env file to define the HOST and PORT your app will be using.
+Remember to configure your `.env` file to define the HOST and PORT your app will be using.
 
 ______________
 
