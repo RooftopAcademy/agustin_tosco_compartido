@@ -7,7 +7,7 @@
     "dev": "nodemon src/backend/index.js",
     "start": "lite-server",
     "tsc:w": "tsc -w",
-    "build": "webpack -w --mode production"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
