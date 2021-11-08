@@ -39,19 +39,13 @@ git clone https://github.com/RooftopAcademy/agustin_tosco_compartido.git
 npm install
 ```
 
-In one console run the following code:
+In your console run the following code:
 
 ```bash
-npm run build
+npm run build && npm run dev
 ```
 
-Next, in another console run the following code:
-
-```bash
-npm run dev
-```
-
-By default, the app will run in port 3002.
+Remember to configure your .env file to define the HOST and PORT your app will be using.
 
 ______________
 
