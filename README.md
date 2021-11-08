@@ -11,6 +11,7 @@ ___
 * General Info
 * Technologies
 * Setup
+* Contributing
 
 ## General Info
 
