@@ -52,7 +52,7 @@ Next, in another console run the following code:
 npm run dev
 ```
 
-By default, the app will run in port 3002.
+Remember to configure your `.env` file to define the HOST and PORT your app will be using.
 
 ______________
 
