@@ -40,16 +40,10 @@ git clone https://github.com/RooftopAcademy/agustin_tosco_compartido.git
 npm install
 ```
 
-In one console run the following code:
+In your console run the following code:
 
 ```bash
-npm run build
-```
-
-Next, in another console run the following code:
-
-```bash
-npm run dev
+npm run build && npm run dev
 ```
 
 Remember to configure your `.env` file to define the HOST and PORT your app will be using.
