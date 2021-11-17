@@ -40,14 +40,18 @@ git clone https://github.com/RooftopAcademy/agustin_tosco_compartido.git
 npm install
 ```
 
+Configure your `.env` file to define the HOST and PORT your app will be using.
+
+```env
+HOST='HOST NAME GOES HERE'
+PORT='PORT NAME GOES HERE'
+```
+
 In your console run the following code:
 
 ```bash
 npm run build && npm run dev
 ```
-
-Remember to configure your `.env` file to define the HOST and PORT your app will be using.
-
 ______________
 
 ## Contributing
